@@ -6,16 +6,24 @@
 // http://www.thingiverse.com/knick
 
 $fn=96;
-
+// thickness of spnner body.  most bearings are 7-8mm
 body_thickness = 7.5;
+//diameter of center hole.  typical bearings are 22mm
 body_hole_diameter = 22;
+//dimater of body surrounding center hole, should be larger than hole diameter
 body_diameter = 38;
 
-arms = 3;
+// number of arms, supports 2, 3, or 4.
+arms = 3; //[2-4]
+//length of each arm
 arm_length = 30;
+//diameter of the hole in each arm.  22 for a bearing, or less for other weights, etc.  if using a hex nut, measure widest part from point to point
 arm_hole_diameter = 22;
+//sides for arm holes, set to 6 in order to weight them with hex nuts
 arm_hole_sides = 0;
+//thickness of material around each arm hole
 arm_thickness = 3.5;
+// size of center part to hull each arm against, adjust how thick each arm is.
 arm_hull_center = 30;
 
 ahs = (arm_hole_sides==0) ? 96 : arm_hole_sides;

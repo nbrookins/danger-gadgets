@@ -7,12 +7,17 @@
 
 
 $fn=96;
-
-part = 0;
+//which part to print.  
+part = 0; // [0:Preview both, 1:Ring, 2:Bead]
+//Diameter of ring
 diameter = 20;
+//thickness of ring
 thickness = 2;
+//size/ratio of bead as compared to thickness.  adjust upwards alightly from 1.0 to enlarge bead
 bead_ratio = 1.1;
+//ratio of slot to bead.  .9 usually gives a tight fit.  
 slot_ratio = 0.9;
+//additional offset to position the bead slot.  tweak this if it isn't centered to your liking
 slot_offset = 0;
 
 bead_radius = thickness * 1.5 * bead_ratio;

@@ -5,16 +5,24 @@
 // https://github.com/nbrookins/danger-gadgets.git
 // http://www.thingiverse.com/knick
 
+//distance between the two holes
+distance = 4;
+//thickness of spacer
+thickness = 1.5;
+
+//diameter of gauge hole #1
 hole1 = 16;
+//additional flare.  Set to zero for a unflared hole
 flare1 = 1.25;
+//width of material around the hole.  
 width1 = 2.5;
 
+//diameter of gauge hole #2
 hole2 = 8;
+//additional flare.  Set to zero for a unflared hole
 flare2 = 1.0;
+//width of material around the hole.  
 width2 = 2;
-
-distance = 4;
-thickness = 1.5;
 
 $fn=128;
 apart = hole1/2 + hole2/2 + distance;
