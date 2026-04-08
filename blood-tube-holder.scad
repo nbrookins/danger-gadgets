@@ -9,10 +9,11 @@ body_taper_offset = 20;
 body_thickness = 4;
 
 tube_radius = 10/2;
-tube_length = 30;
+tube_length = 50;
 
 int_height = 8;
 int_radius = 20/2;
+int_inner_radius = 16/2;
 
 module body(){
     difference() {
@@ -36,19 +37,28 @@ module body(){
         translate([0,0,body_core_height/2])
         cube([body_width/2, body_length, body_core_height-body_thickness], center=true);
         }
-        //top tube cut
-        translate([0,0,body_taper_offset + body_thickness])
-        cylinder(h = tube_length, r = tube_radius, center=true);
+
     }
 }
 
 module interface(){
     //starting point
-    translate([0,0,-int_height/2])
-    cylinder(h = int_height, r = int_radius, center=true);
+    difference() {
+        translate([0,0,-int_height/2])
+        cylinder(h = int_height, r = int_radius, center=true);
+
+        translate([0,0,-int_height/2 -.01])
+        cylinder(h = int_height, r = int_inner_radius, center=true);
+    }
 }
 
-union(){
-    body();
-    interface();
-}
+
+    difference() {
+        union(){
+            body();
+            interface();
+        }
+        //top tube cut (with debug flag for demonstration)
+        translate([0,0,body_taper_offset/2])
+       # cylinder(h = tube_length, r = tube_radius, center=true);
+    }
