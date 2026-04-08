@@ -14,7 +14,7 @@ body_hole_diameter = 22;
 body_diameter = 38;
 
 // number of arms, supports 2, 3, or 4.
-arms = 3; //[2-4]
+arms = 4; //[2-4]
 //length of each arm
 arm_length = 30;
 //diameter of the hole in each arm.  22 for a bearing, or less for other weights, etc.  if using a hex nut, measure widest part from point to point
