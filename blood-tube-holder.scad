@@ -11,6 +11,9 @@ body_thickness = 4;
 tube_radius = 10/2;
 tube_length = 30;
 
+int_height = 8;
+int_radius = 20/2;
+
 module body(){
     difference() {
         union(){
@@ -39,8 +42,13 @@ module body(){
     }
 }
 
-module tube_holder(){}
+module interface(){
+    //starting point
+    translate([0,0,-int_height/2])
+    cylinder(h = int_height, r = int_radius, center=true);
+}
 
-module interface(){}
-
-body();
+union(){
+    body();
+    interface();
+}
